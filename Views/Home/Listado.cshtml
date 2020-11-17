@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PracticaEntityGrupo12.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Listado";
+}
+
+<h1>Listado</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalarioEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaIngresoEmpleado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalarioEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaIngresoEmpleado)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodigoEmpleado">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodigoEmpleado">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodigoEmpleado">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
