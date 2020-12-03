@@ -30,18 +30,9 @@ namespace PracticaEntityGrupo12.Controllers
             return View();
         }
 
-        
-        public IActionResult LlamarL()
+        public ActionResult Lista()
         {
-     
-            /*using (PracticaEntityContext db = new PracticaEntityContext())
-            {
-                 var emplist = db.Empleado.ToList<Empleado>();
-              
-                     
-            }*/
-
-           return View();
+            return View();
         }
 
         public ActionResult Listado()
